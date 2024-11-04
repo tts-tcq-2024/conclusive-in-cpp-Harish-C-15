@@ -1,5 +1,3 @@
-#pragma once
-
 typedef enum {
   PASSIVE_COOLING,
   HI_ACTIVE_COOLING,
@@ -25,8 +23,9 @@ typedef struct {
   char brand[48];
 } BatteryCharacter;
 
-void checkAndAlert(
-  AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
-
+void checkAndAlert(AlertTarget alertTarget, BatteryCharacter batteryChar, double temperatureInC);
 void sendToController(BreachType breachType);
 void sendToEmail(BreachType breachType);
+
+TemperatureLimits getTemperatureLimits(CoolingType coolingType);
+void handleAlert(AlertTarget alertTarget, BreachType breachType);
