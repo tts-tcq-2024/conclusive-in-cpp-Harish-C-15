@@ -50,7 +50,7 @@ jobs:
       run: gcovr --gcov-exclude=".*tests.*" --gcov-exclude=".*test.*" -r . --html --html-details -o coverage.html --print-summary
 
     - name: create coverage artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
       with:
         name: coverage
         path: ./*.html
